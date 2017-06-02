@@ -1,0 +1,276 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+
+.navbar-brand {
+    background-color: #e4e4e4;
+    color: black;
+    padding: 0px;
+}
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        background-color: #e4e4e4 !important;
+        color: black !important;
+    }
+
+.navbar-inverse {
+    background-color: #5F6A7D;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color:white;
+}
+
+.main-nav li a {
+    background-color: #5F6A7D;
+    color: white;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.main-nav li a span:first-child{
+    background:pink;
+}
+
+.main-nav li a span:nth-child(2){
+    background:pink;
+}
+
+.main-nav li a span:last-child{
+    background:pink;
+}
+
+
+/* Highlighting rules for nav menu items */
+.main-nav li a.active,
+.main-nav li a.active:hover,
+.main-nav li a.active:focus {
+    background-color: #8c8c8c;
+    color: white;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+    .main-nav li a:hover,
+    .main-nav li a:focus {
+        background-color: #e4e4e4 !important;
+        color: #333 !important;
+        border-radius: 0px !important;
+        border-width: 0px !important;
+    }
+
+.main-nav li .fa {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Keep the nav menu independent of scrolling and on top of other items */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.main-nav-user-panel a:hover,
+.main-nav-user-panel a:focus,
+.main-nav-user-panel a:link,
+.main-nav-user-panel a:visited {
+    text-decoration: none;
+}
+
+.main-nav-user-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.main-nav .dropdown li a {
+    background-color:white;
+    color:black;
+}
+
+.navbar {
+    border: 0px;
+}
+
+.dashboard-box {
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    overflow:hidden;
+}
+
+.dashboard-box-header {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+/*
+.dashboard-box-footer-left-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.dashboard-box-footer-right-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+*/
+
+.dashboard-box-footer-left-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.dashboard-box-footer-right-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+    .dashboard-box-footer-left-button:hover,
+    .dashboard-box-footer-left-button:focus,
+    .dashboard-box-footer-right-button:hover,
+    .dashboard-box-footer-right-button:focus {
+        text-decoration: none;
+        background-color: #8c8c8c;
+        color: white;
+    }
+
+.dashboard-box-img-container
+{
+    text-align:center;
+    width: 100%;
+}
+
+.dashboard-box-img {
+    text-align: center;
+}
+
+.dashboard-box-bignumber {
+    padding-top: 20px;
+    font-size: 80px;
+    text-align: center;
+}
+
+.dashboard-box-subtitle {
+    text-align: center;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    body {
+        padding-top: 50px;
+    }
+
+    .main-nav-user-panel {
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    /* On small screens, convert the nav menu to a vertical sidebar */
+    .main-nav {
+        height: 100%;
+        /*width: calc(25% - 20px);
+        max-width: 210px;*/
+        width: 200px;
+    }
+
+    .main-nav .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+        height: 100%;
+        min-width: 250px
+    }
+
+    .main-nav-user-panel {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .main-nav-user-icon {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+    }
+
+    .main-nav .navbar-header {
+        float: none;
+    }
+
+    .main-nav .navbar-collapse {
+        padding: 0px;
+    }
+
+    .main-nav .navbar ul {
+        float: none;
+    }
+
+    .main-nav .navbar li {
+        float: none;
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    .main-nav .navbar li a {
+        padding: 16px 16px;
+        border-radius: 4px;
+    }
+
+    .main-nav .navbar a {
+        /* If a menu item's text is too long, truncate it */
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

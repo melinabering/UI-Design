@@ -1,0 +1,343 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: #fafafa;
+}
+
+.navbar-inverse .navbar-brand, 
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus{
+    background: rgba(0,0,0,0.25);
+    color: black;
+    height: 78px;
+    padding:20px 10px 0 30px
+}
+
+.navbar-brand img { max-height:35px; max-width: 190px; }
+
+
+.navbar-inverse {
+    background-color: #5F6A7D;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color:white;
+} 
+
+.navbar-text { position: relative; }
+.navbar-text-alert {
+    height: 10px; width: 10px; background: #ff9e1b; border-radius: 8px; position: absolute; top:0; right: 0;
+}
+
+
+.navbar-top .collapse { margin-top: 80px; display: flex;  border-top:none; border-right:none; border-left:none; vertical-align: middle;  }
+
+
+.main-nav {z-index: 10000 !important;}
+.main-nav li a {
+    background-color: #5F6A7D;
+    color: white;
+    border-radius: 0px;
+    border-width: 0px;
+    position: relative;
+    border-radius:0 !important;
+    padding: 32px 16px !important
+
+
+}
+
+.main-nav li a span:first-child{
+  
+    position: absolute;
+    top:10px;
+    left: 30px;
+    /*font-weight: bold;*/
+    font-size: 15px
+
+}
+
+.main-nav li a span:nth-child(2){
+    color:rgba(255,255,255,0.5);
+    position: absolute;
+    bottom:10px;
+    left: 30px;
+    font-size: 13px;
+
+}
+
+.main-nav li a span:last-child{
+    
+    position: absolute;
+    top:10px;
+    right: 20px;
+    background: rgba(0,0,0,0.1);
+    padding: 10px
+}
+
+.main-nav li a:hover span:last-child{
+    background: rgba(74,204,153,1);
+ }   
+
+/* Highlighting rules for nav menu items */
+.main-nav li a.active,
+.main-nav li a.active:hover,
+.main-nav li a.active:focus {
+    background-color: #8c8c8c;
+    color: white;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+    .main-nav li a:hover,
+    .main-nav li a:focus {
+        background-color: transparent !important;
+     
+    }
+
+.main-nav li .fa {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Keep the nav menu independent of scrolling and on top of other items */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.main-nav-user-panel a:hover,
+.main-nav-user-panel a:focus,
+.main-nav-user-panel a:link,
+.main-nav-user-panel a:visited {
+    text-decoration: none;
+}
+
+.main-nav-user-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.main-nav .dropdown li a {
+    background-color:white;
+    color:black;
+}
+
+
+
+.dashboard-box {
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    overflow:hidden;
+}
+
+.dashboard-box-header {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.panel-heading {border-radius:0;}
+
+.initial-badge {
+    background: #4ACC99;
+    height:35px; width: 35px;
+    color:white;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 8px
+}
+
+.mi-hover:hover{color: #41affa; cursor: pointer;} 
+
+.search-input {border:none !important; width: auto !important; box-shadow: none}
+
+.navbar-top form.navbar-form {padding:0; border:none; margin:8px 0 0 0;}
+/*
+.dashboard-box-footer-left-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.dashboard-box-footer-right-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+*/
+
+.dashboard-box-footer-left-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.dashboard-box-footer-right-button {
+    background-color: #e4e4e4;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+    .dashboard-box-footer-left-button:hover,
+    .dashboard-box-footer-left-button:focus,
+    .dashboard-box-footer-right-button:hover,
+    .dashboard-box-footer-right-button:focus {
+        text-decoration: none;
+        background-color: #8c8c8c;
+        color: white;
+    }
+
+.dashboard-box-img-container
+{
+    text-align:center;
+    width: 100%;
+}
+
+.dashboard-box-img {
+    text-align: center;
+}
+
+.dashboard-box-bignumber {
+    padding-top: 20px;
+    font-size: 80px;
+    text-align: center;
+}
+
+.dashboard-box-subtitle {
+    text-align: center;
+    font-weight: bold;
+    color: #8c8c8c;
+}
+
+.panel{
+    border:1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+}
+
+.content-area { padding-left:0px; width: 100%; margin: 0; padding-right:0; }
+.content-area-padding { padding:65px 15px 15px 15px;  }
+
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    body {
+        padding-top: 80px;
+    }
+
+    .main-nav-user-panel {
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    /* On small screens, convert the nav menu to a vertical sidebar */
+    .main-nav {
+        height: 100%;
+        /*width: calc(25% - 20px);
+        max-width: 210px;*/
+        width: 250px;
+
+    }
+
+    .main-nav .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+        height: 100%;
+        min-width: 250px;
+        overflow-x:overlay;
+    }
+
+    .main-nav-user-panel {
+        /*position: absolute;*/
+        bottom: 0px;
+    }
+
+    .main-nav-user-icon {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+    }
+
+    .main-nav .navbar-header {
+        float: none;
+    }
+
+    .main-nav .navbar-collapse {
+        padding: 0px;
+    }
+
+    .main-nav .navbar ul {
+        float: none;
+        margin-top:20px;
+    }
+
+    .main-nav .navbar li {
+        float: none;
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    .main-nav .navbar li a {
+        padding: 16px 16px;
+        border-radius: 4px;
+    }
+
+    .main-nav .navbar a {
+        /* If a menu item's text is too long, truncate it */
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .content-area { padding-left:250px; width: 100%; margin: 0; padding-right:0; }
+    .content-area-padding { padding-left:310px; padding-right:60px; padding-top:100px;   }
+
+    .navbar-top { padding:10px 60px 0 290px; margin: 0;height: 77px; border-top:none; border-right:none; border-left:none;  }
+    .navbar-top .collapse {margin-top: 0}
+    .navbar-top form.navbar-form {padding:0; border:none; margin:8px 0 0 0;}
+}
