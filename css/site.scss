@@ -1,48 +1,92 @@
+@import 'dynamic';
+
+
+
 
 body{
     font-family: 'Lato', sans-serif;
+    background: $bg-color;
 }
 
+/****** EVERYTHING NAVBAR ******/
 
-.navbar-brand {
-    background-color: #e4e4e4;
+.navbar-inverse .navbar-brand, 
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus{
+    background: rgba($navbar-inverse-txt-color,0.25);
     color: black;
-    padding: 0px;
+    height: 78px;
+    padding:20px 10px 0 30px
 }
 
-    .navbar-brand:hover,
-    .navbar-brand:focus {
-        background-color: #e4e4e4 !important;
-        color: black !important;
-    }
+.navbar-brand img { max-height:35px; max-width: 190px; }
+
 
 .navbar-inverse {
-    background-color: #5F6A7D;
+    background-color: $bg-navbar-inverse;
+}
+
+.navbar-default {
+    background-color: $bg-navbar-default;
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color:white;
+} 
+
+.navbar-text { position: relative; }
+.navbar-text-alert {
+    height: 10px; width: 10px; background: #ff9e1b; border-radius: 8px; position: absolute; top:0; right: 0;
 }
 
+
+.navbar-top .collapse { margin-top: 80px; display: flex;  border-top:none; border-right:none; border-left:none; vertical-align: middle;  }
+
+/****** EVERYTHING (SIDEBAR) MAIN NAV ******/
+.main-nav {z-index: 10000 !important;}
 .main-nav li a {
-    background-color: #5F6A7D;
+    background-color: transparent;
     color: white;
     border-radius: 0px;
     border-width: 0px;
+    position: relative;
+    border-radius:0 !important;
+    padding: 32px 16px !important
+
+
 }
 
 .main-nav li a span:first-child{
-    background:pink;
+  
+    position: absolute;
+    top:10px;
+    left: 30px;
+    /*font-weight: bold;*/
+    font-size: 15px
+
 }
 
 .main-nav li a span:nth-child(2){
-    background:pink;
+    color:rgba($navbar-inverse-txt-color ,0.5);
+    position: absolute;
+    bottom:10px;
+    left: 30px;
+    font-size: 13px;
+
 }
 
 .main-nav li a span:last-child{
-    background:pink;
+    
+    position: absolute;
+    top:10px;
+    right: 20px;
+    background: rgba($navbar-inverse-txt-color,0.1);
+    padding: 10px
 }
 
+.main-nav li a:hover span:last-child{
+    background: rgba(74,204,153,1);
+ }   
 
 /* Highlighting rules for nav menu items */
 .main-nav li a.active,
@@ -56,10 +100,8 @@ body{
 
     .main-nav li a:hover,
     .main-nav li a:focus {
-        background-color: #e4e4e4 !important;
-        color: #333 !important;
-        border-radius: 0px !important;
-        border-width: 0px !important;
+        background-color: transparent !important;
+     
     }
 
 .main-nav li .fa {
@@ -95,120 +137,44 @@ body{
     color:black;
 }
 
-.navbar {
-    border: 0px;
-}
+ 
+.panel-heading {border-radius:0;}
 
-.dashboard-box {
-    position: relative;
-    background-color: #f4f4f4;
-    width: 100%;
-    height: 250px;
-    margin-bottom: 20px;
-    overflow:hidden;
-}
-
-.dashboard-box-header {
-    vertical-align: middle;
+.initial-badge {
+    background: #4ACC99;
+    height:35px; width: 35px;
+    color:white;
+    border-radius: 25px;
+    text-transform: uppercase;
     text-align: center;
-    padding-top: 18px;
-    padding-bottom: 10px;
-    font-weight: bold;
+    font-size: 12px;
+    padding-top: 8px;
+    position:absolute;
+    right:15px;
+    top:-8px;
 }
 
-/*
-.dashboard-box-footer-left-button {
-    background-color: #e4e4e4;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    font-weight: bold;
-    color: #8c8c8c;
+.mi-hover:hover{color: #41affa; cursor: pointer;} 
+
+.search-input {border:none !important; width: auto !important; box-shadow: none}
+
+.navbar-top form.navbar-form {padding:0; border:none; margin:8px 0 0 0;}
+
+ .navbar-link {padding-right:70px;}
+
+.content-area { padding-left:0px; width: 100%; margin: 0; padding-right:0; }
+.content-area-padding { padding:65px 15px 15px 15px;  }
+
+.panel{
+    border:1px solid rgba($navbar-inverse-txt-color, 0.15);
+    border-radius: 0;
 }
 
-.dashboard-box-footer-right-button {
-    background-color: #e4e4e4;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    font-weight: bold;
-    color: #8c8c8c;
-}
-*/
-
-.dashboard-box-footer-left-button {
-    background-color: #e4e4e4;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 20px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    font-weight: bold;
-    color: #8c8c8c;
-}
-
-.dashboard-box-footer-right-button {
-    background-color: #e4e4e4;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 20px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    font-weight: bold;
-    color: #8c8c8c;
-}
-
-    .dashboard-box-footer-left-button:hover,
-    .dashboard-box-footer-left-button:focus,
-    .dashboard-box-footer-right-button:hover,
-    .dashboard-box-footer-right-button:focus {
-        text-decoration: none;
-        background-color: #8c8c8c;
-        color: white;
-    }
-
-.dashboard-box-img-container
-{
-    text-align:center;
-    width: 100%;
-}
-
-.dashboard-box-img {
-    text-align: center;
-}
-
-.dashboard-box-bignumber {
-    padding-top: 20px;
-    font-size: 80px;
-    text-align: center;
-}
-
-.dashboard-box-subtitle {
-    text-align: center;
-    font-weight: bold;
-    color: #8c8c8c;
-}
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {
-        padding-top: 50px;
+        padding-top: 80px;
     }
 
     .main-nav-user-panel {
@@ -222,18 +188,20 @@ body{
         height: 100%;
         /*width: calc(25% - 20px);
         max-width: 210px;*/
-        width: 200px;
+        width: 250px;
+
     }
 
     .main-nav .navbar {
         border-radius: 0px;
         border-width: 0px;
         height: 100%;
-        min-width: 250px
+        min-width: 250px;
+        overflow-x:overlay;
     }
 
     .main-nav-user-panel {
-        position: absolute;
+        /*position: absolute;*/
         bottom: 0px;
     }
 
@@ -253,6 +221,7 @@ body{
 
     .main-nav .navbar ul {
         float: none;
+        margin-top:20px;
     }
 
     .main-nav .navbar li {
@@ -273,4 +242,12 @@ body{
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+
+    .content-area { padding-left:250px; width: 100%; margin: 0; padding-right:0; }
+    .content-area-padding { padding-left:310px; padding-right:60px; padding-top:100px;   }
+
+    .navbar-top { padding:10px 60px 0 290px; margin: 0;height: 78px; border-top:none; border-right:none; border-left:none;  }
+    .navbar-top .collapse {margin-top: 0}
+    .navbar-top form.navbar-form {padding:0; border:none; margin:8px 0 0 0;}
 }
