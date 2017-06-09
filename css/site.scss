@@ -10,6 +10,17 @@ body{
 
 /****** EVERYTHING NAVBAR ******/
 
+
+.navbar{
+    .navbar-toggle{
+            background-color: rgba($navbar-inverse-txt-color,0.15);
+            margin: 20px;
+            border: none;
+            height: 44px;
+            width: 44px;
+            padding: 10px;
+    }
+}
 .navbar-inverse .navbar-brand, 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus{
@@ -34,13 +45,21 @@ body{
     color:white;
 } 
 
-.navbar-text { position: relative; }
+.navbar-text { position: relative; margin:15px;}
+
+@keyframes blinking-alert {
+    0% {background-color: #ff9e1b;}
+    50% {background-color: transparent;}
+    100% {background-color: #ff9e1b;}
+}
+
 .navbar-text-alert {
     height: 10px; width: 10px; background: #ff9e1b; border-radius: 8px; position: absolute; top:0; right: 0;
+    animation-name:blinking-alert; animation-duration:2s;animation-iteration-count: infinite;
 }
 
 
-.navbar-top .collapse { margin-top: 80px; display: flex;  border-top:none; border-right:none; border-left:none; vertical-align: middle;  }
+.navbar-top .collapse { margin-top: 86px; display: flex;  border-top:none; border-right:none; border-left:none; vertical-align: middle;  }
 
 /****** EVERYTHING (SIDEBAR) MAIN NAV ******/
 .main-nav {z-index: 10000 !important;}
@@ -84,8 +103,8 @@ body{
     padding: 10px
 }
 
-.main-nav li a:hover span:last-child{
-    background: rgba(74,204,153,1);
+.main-nav li a:hover span:last-child, .navbar-inverse .navbar-toggle:hover{
+    background: $hover-bg;
  }   
 
 /* Highlighting rules for nav menu items */
@@ -150,7 +169,7 @@ body{
     font-size: 12px;
     padding-top: 8px;
     position:absolute;
-    right:15px;
+    right:-15px;
     top:-8px;
 }
 
@@ -160,7 +179,13 @@ body{
 
 .navbar-top form.navbar-form {padding:0; border:none; margin:8px 0 0 0;}
 
- .navbar-link {padding-right:70px;}
+.navbar-top{
+    .material-icons{
+        color:$material-icons-color;
+    }
+}
+
+ .navbar-link {padding-right:40px;}
 
 .content-area { padding-left:0px; width: 100%; margin: 0; padding-right:0; }
 .content-area-padding { padding:65px 15px 15px 15px;  }
@@ -170,6 +195,7 @@ body{
     border-radius: 0;
 }
 
+.panel-grid table td { background: yellow }
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
