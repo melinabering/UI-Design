@@ -152,7 +152,7 @@
                     <ol class="breadcrumb">
                           <li><a href="#">Home</a></li>
                           <li><a href="#">Library</a></li>
-                          <li class="active">Data</li>
+                          <li class="active">grid</li>
                     </ol>
 
                     <div class="alert alert-info" role="alert"> 
@@ -161,19 +161,53 @@
                     </div>
                     
                     <div class="row row-flex row-flex-wrap">     
-                    	<div class="col-sm-12 col-md-4">
-                    		<div class="panel panel-default flex-col">
-    	                		<div class="panel-body">
-    	                			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus posuere maximus. Suspendisse vulputate aliquet dolor. Cras suscipit eros augue, non feugiat dui fermentum at. Donec lorem nisi, vestibulum nec est vitae, finibus malesuada nibh. Duis porttitor purus lectus, ut bibendum mi egestas ut. Pellentesque et congue libero. In hac habitasse platea dictumst. Duis pharetra lorem at odio sagittis ultricies. Phasellus velit neque, scelerisque at turpis non, tincidunt convallis sapien. Suspendisse facilisis efficitur nunc, quis faucibus tortor pulvinar sed. Donec malesuada dui quam, condimentum tempus mauris venenatis at. Duis dignissim, arcu eget interdum hendrerit, est ligula convallis sem, non tempus quam tellus in justo. Proin vel orci ut mi ultricies malesuada quis tempor orci.
-    	                		</div>
-                    		</div>
-                    	</div>
-                    	<div class="col-sm-12 col-md-4">
-                    		<div class="panel panel-default flex-col">
-    	                		<div class="panel-body">
-    	                			Duis id felis sit amet ligula euismod congue vitae at odio. Duis nec justo dapibus, euismod metus sed, venenatis enim. Quisque a vestibulum odio, non congue arcu. Morbi faucibus sem et odio suscipit suscipit. Sed finibus imperdiet erat. Nullam sollicitudin non neque quis suscipit. Ut condimentum sem sed ante malesuada aliquet. Proin congue felis molestie mi consequat iaculis. Sed gravida suscipit sapien, at commodo mi feugiat eu.
-    	                		</div>
-                    		</div>
+                    	<div class="col-sm-12 col-md-8">
+                		  <div class="panel panel-primary panel-grid">
+                            <div class="panel-heading">
+                                <h4>Sales Team</h4>
+                            </div>
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                          </ul>
+
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                
+                                <div class="table-responsive">
+                                <table class="table">
+                                  <tr class="panel-heading">
+                                    <th>Firstname</th>
+                                    <th>Lastname</th> 
+                                    <th>Age</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Jill</td>
+                                    <td>Smith</td> 
+                                    <td>50</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Eve</td>
+                                    <td>Jackson</td> 
+                                    <td>94</td>
+                                  </tr>
+                                </table>
+                            </div>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                            <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                          </div>
+
+                        </div>
+
+                           
+                    	
                     	</div>
                     	<div class="col-sm-12 col-md-4">
                     		<div class="panel panel-default flex-col">

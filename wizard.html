@@ -1,0 +1,123 @@
+<html>
+    <head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+        <title>Wizards</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="css/wizard.css" rel="stylesheet" />
+
+
+          
+    </head>
+    <body>
+    <div class="jumbotron">
+        <div class="container">
+            <h4>Navpills</h4>
+        </div>
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <div class="row sign-up-steps">
+                       
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Location" class="completed col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">location_on</i> <span class="visible-lg visible-md visible-sm">Location</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Department" class="active col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">widgets</i> <span class="visible-lg visible-md visible-sm">Department</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Position" class=" col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">account_box</i> <span class="visible-lg visible-md visible-sm">Position</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Details" class=" col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">pageview</i> <span class="visible-lg visible-md visible-sm">Details</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+                 <div class="col-md-8 col-md-offset-2 visible-xs">
+                    <h4>Title</h4>
+                </div>
+                <div class="padding hidden-xs"></div>
+            </div>  
+           
+            <hr>
+           
+           
+           
+            <!--<div class="row">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h3>With Stacked menu on mobile</h3>
+                    <ul class="nav nav-pills nav-justified steps">
+                        <li class="completed"><a href="#">Location</a></li>
+                        <li class="completed"><a href="#">Department</a></li>
+                        <li class="active"><a href="#">Position</a></li>
+                        <li class=""><a href="#">Details</a></li>
+                    </ul>
+                </div>
+            </div>   
+
+             <hr>-->
+
+
+           
+           
+        
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h3>With inline block menu on mobile</h3>
+                    <div class="row steps-inline">
+                       
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Location" class="completed col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">location_on</i> <span class="visible-lg visible-md visible-sm">Location</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Department" class="active col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">widgets</i> <span class="visible-lg visible-md visible-sm">Department</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Position" class=" col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">account_box</i> <span class="visible-lg visible-md visible-sm">Position</span></a>
+                            </div>
+                            <div role="presentation" data-toggle="tooltip" data-placement="auto" title="Details" class=" col-xs-3">
+                                <a href="#"><i class="material-icons visible-xs">pageview</i> <span class="visible-lg visible-md visible-sm">Details</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+             
+
+             <hr>
+           
+                  
+
+        </div>
+  <script type="text/JavaScript">
+            $(function () {
+                if($(window).width() < 769){
+                    
+                      $('[data-toggle="tooltip"]').tooltip('show');
+                      $('[data-toggle="tooltip"]').tooltip('toggle');
+                    
+                }
+                else{
+                   
+                        $('[data-toggle="tooltip"]').tooltip('hide');
+                        $('[data-toggle="tooltip"]').removeAttr('title');
+                    
+                }
+            });
+            
+        </script>           
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    
+
+    </body>
+</html>
+
+

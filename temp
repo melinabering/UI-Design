@@ -1,0 +1,491 @@
+<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Public.Master" Inherits="System.Web.Mvc.ViewPage<ApplicantONE.ViewModels.Account_ClientSignUp>" %>
+
+<%@ Import Namespace="ApplicantONE" %>
+<%-- For some reason the code is not responding to my registration of the above path in the web.config  --%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <% 
+        var aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupTitle");
+        string clientSignupTitle = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"ApplicantOne" : aTextRecord.Text).Trim();
+    %>
+
+    <%= clientSignupTitle %>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% 
+        var aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignup15DayTrialMessage");
+        string clientSignup15DayTrialMessage = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"Your 15 DAY FREE TRIAL starts as soon as you create an account with ApplicantOne" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupCreateAccount");
+        string clientSignupCreateAccount = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"Create your ApplicantOne account" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupExpressProductName");
+        string clientSignupExpressProductName = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"Express" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupExpressProductDescription");
+        string clientSignupExpressProductDescription = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"I am a short description of this account type" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupEnterpriseProductName");
+        string clientSignupEnterpriseProductName = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"Enterprise" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupEnterpriseProductDescription");
+        string clientSignupEnterpriseProductDescription = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"I am a short description of this account type" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupVideoInterviewProductName");
+        string clientSignupVideoInterviewProductName = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"Video Interview" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupVideoInterviewProductDescription");
+        string clientSignupVideoInterviewProductDescription = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"I am a short description of this account type" : aTextRecord.Text).Trim();
+
+        aTextRecord = ApplicantONE.DomainModels.Resellers.GetResellerTextByName(ViewBag.UserProfile.ResellerID, "ClientSignupTakeAwayMessage");
+        string clientSignupTakeAwayMessage = (aTextRecord == null || String.IsNullOrWhiteSpace(aTextRecord.Text) ? @"<h2>Simple. Affordable. Customizable.</h2>
+                    <p>For Human Resources professionals who need to simplify and streamline the recruiting and hiring process, ApplicantOne is an easy, affordable and customizable on-demand application that boosts productivity by coordinating hiring efforts across an organization.</p>" : aTextRecord.Text).Trim();
+
+        int multiplyBy = 1;
+        float scaleMultiplier = 1.0f;
+        if (ViewData["CSSGrid24"] != null &&
+            (bool)ViewData["CSSGrid24"] == true)
+        {
+            multiplyBy = 2;
+            scaleMultiplier = 1.0f;
+        }
+        else
+        {
+            multiplyBy = 1;
+            scaleMultiplier = 2.0f;
+        }
+
+        string col_md_1 = "col-md-" + (1 * multiplyBy).ToString();
+        string col_md_2 = "col-md-" + (2 * multiplyBy).ToString();
+        string col_md_3 = "col-md-" + (3 * multiplyBy).ToString();
+        string col_md_4 = "col-md-" + (4 * multiplyBy).ToString();
+        string col_md_5 = "col-md-" + (5 * multiplyBy).ToString();
+        string col_md_6 = "col-md-" + (6 * multiplyBy).ToString();
+        string col_md_7 = "col-md-" + (7 * multiplyBy).ToString();
+        string col_md_8 = "col-md-" + (8 * multiplyBy).ToString();
+        string col_md_9 = "col-md-" + (9 * multiplyBy).ToString();
+        string col_md_10 = "col-md-" + (10 * multiplyBy).ToString();
+        string col_md_11 = "col-md-" + (11 * multiplyBy).ToString();
+        string col_md_12 = "col-md-" + (12 * multiplyBy).ToString();
+
+        string em0_4 = (0.4 * scaleMultiplier).ToString() + "em";
+        string em0_465 = (0.465 * scaleMultiplier).ToString() + "em";
+        string em0_5 = (0.5 * scaleMultiplier).ToString() + "em";
+        string em0_6 = (0.6 * scaleMultiplier).ToString() + "em";
+        string em0_65 = (0.65 * scaleMultiplier).ToString() + "em";
+        string em0_75 = (0.75 * scaleMultiplier).ToString() + "em";
+        string em0_8 = (0.8 * scaleMultiplier).ToString() + "em";
+        string em0_9 = (0.9 * scaleMultiplier).ToString() + "em";
+        string em1_0 = (1.0 * scaleMultiplier).ToString() + "em";
+        string em1_05 = (1.05 * scaleMultiplier).ToString() + "em";
+        string em1_45 = (1.45 * scaleMultiplier).ToString() + "em";
+        string em2_429 = (2.429 * scaleMultiplier).ToString() + "em";
+        string em8_0 = (8.0 * scaleMultiplier).ToString() + "em";
+        string em8_9 = (8.9 * scaleMultiplier).ToString() + "em";
+        string em10_32 = (10.32 * scaleMultiplier).ToString() + "em";
+
+    %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
+    <div class="hero">
+        <div class="wrapper signupLabels">
+            <form id="frmClientSignUp" action="../../Account/ClientSignup" method="post">
+                <h1 style="text-align: center;" class="title">Start Your Free Trial Today</h1>
+                <div class="desc">
+                    <p style="text-align: center; <%="font-size: " + em1_0 + ";" + "padding-bottom: " + em0_4 + ";" %>">Your job is about to get easier</p>
+
+                    <%if (!string.IsNullOrEmpty(ViewBag.ErrorMsg))
+                        { %>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div class="alert alert-danger <%= col_md_12 %>"><%= ViewBag.ErrorMsg %></div>
+                    </div>
+                    <% } %>
+
+                    <p class="signupHeading">Select Account Type:</p>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="<%= "padding-top: " + em0_4 + "; padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_4 %>">
+                            <div id="divExpress" class="atsPackage <%= Model.ATSProductType == "1" ? "choosenPackage" : "" %>">
+                                <label class="text-uppercase atsPackageTitle"><%: clientSignupExpressProductName %></label>
+                                <label class="atsPackageShortDescription"><%: clientSignupExpressProductDescription %></label>
+                                <label class="atsPackageCost" style="vertical-align: top; display: inline-block; <%= "font-size: " + em1_45 + ";" %>"><%: "65" %></label>
+                                
+                            </div>
+                        </div>
+                        <div style="<%= "padding-top: " + em0_4 + "; padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_4 %>">
+                            <div id="divEnterprise" class="atsPackage <%= Model.ATSProductType == "2" ? "choosenPackage" : "" %>">
+                                <label class="text-uppercase atsPackageTitle"><%: clientSignupEnterpriseProductName %></label>
+                                <label class="atsPackageShortDescription"><%: clientSignupEnterpriseProductDescription %></label>
+                                <label class="atsPackageCost" style="vertical-align: top; <%= "font-size: " + em1_45 + ";" %>"><%: "95" %></label>
+                            </div>
+                        </div>
+                        <div style="<%= "padding-top: " + em0_4 + "; padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_4 %>">
+                            <div id="divVideoInterview" class="atsPackage <%= Model.ATSProductType == "3" ? "choosenPackage" : "" %>">
+                                <label class="text-uppercase atsPackageTitle"><%: clientSignupVideoInterviewProductName %></label>
+                                <label class="atsPackageShortDescription"><%: clientSignupVideoInterviewProductDescription %></label>
+                                <label class="atsPackageCost" style="vertical-align: top; <%= "font-size: " + em1_45 + ";" %>"><%: "25" %></label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="signupHeading">Company Information:</p>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_12 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Company Name</label><br />
+                            <%= Html.TextBoxFor(m => Model.ClientName, new { @class = "form-control", @placeholder = "Company name"})%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_12 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Address</label><br />
+                            <%= Html.TextBoxFor(m => Model.AddressLine1, new { @class = "form-control", @placeholder = "Address line 1"})%>
+                            <%= Html.TextBoxFor(m => Model.AddressLine2, new { @style = "margin-top: " + em1_0 + ";", @class = "form-control", @placeholder = "Address line 2"})%>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">City</label><br />
+                            <%= Html.TextBoxFor(m => Model.City, new {  @class = "form-control", @placeholder = "City"})%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_3 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">State</label><br />
+                            <%= Html.TextBoxFor(m => Model.State, new {  @class = "form-control", @placeholder = "ex. CA"})%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_3 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">ZipCode</label><br />
+                            <%= Html.TextBoxFor(m => Model.Zip, new {  @class = "form-control", @placeholder = "ex. 12345-6789"})%>
+                        </div>
+                    </div>
+                    <p class="signupHeading">Contact Information:</p>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">First Name</label><br />
+                            <%= Html.TextBoxFor(m => Model.FirstName, new { @class = "form-control", @placeholder = "Account holder's first name"})%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Last Name</label><br />
+                            <%= Html.TextBoxFor(m => Model.LastName, new { @class = "form-control", @placeholder = "Account holder's last name"})%>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Email Address</label><br />
+                            <%= Html.TextBoxFor(m => Model.Email, new { @class = "form-control", @placeholder = "Account holder's email address"})%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Phone Number</label><br />
+                            <%= Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @placeholder = "ex. 555-555-5555" })%>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Create Password</label><br />
+                            <%= Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "Create password" })%>
+                        </div>
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_6 %>">
+                            <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Confirm Password</label><br />
+                            <%= Html.PasswordFor(m => Model.PassWordConfirm, new { @class = "form-control", @placeholder = "Confirm password" })%>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div class="<%= col_md_12 %>">
+                            <div style="text-align: left" class="text-inactive">
+                                <label class="text-uppercase" style="display: inline-block; <%= "font-size: " + em0_6 + ";" %> color: #8a939a;">Password Strength</label>&nbsp; <span class="fa fa-lock" id="pwdLock" style="font-size: 30px; line-height: 34px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="text-align: left; <%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_12 %>">
+                            <%= Html.CheckBoxFor(m => Model.TermsOfService, new { @style="vertical-align: bottom; display: inline-block; width: 2.429em;", @class = "form-control" })%>
+                            <label style="vertical-align: text-bottom; display: inline-block; <%= "font-size: " + em0_6 + ";" %>">By submitting this form, I agree to the XYZ and ABC Terms</label>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="<%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_12 %> center">
+                            <div>
+                                <div class="g-recaptcha tmid" data-sitekey="6Lcz3CMTAAAAAPCLaMcep_1W1r2LiglPgMae3LoA"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="<%= "padding-left: " + em1_0 + "; padding-right: " + em1_0 + ";" %>" class="row">
+                        <div style="<%= "padding-bottom: " + em0_4 + ";" %>" class="<%= col_md_12 %>">
+                            <button style="<%= "font-size: " + em0_465 + ";" %>width: 100%;" type="submit" class="btn btn-primary text-uppercase">Start My 15-Day Free Trial</button>
+                            <%= Html.HiddenFor(m => Model.ATSProductType) %>
+                            <%= Html.HiddenFor(m => Model.Captcha) %>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style type="text/css">
+
+        body{
+            font-family: 'Lato', sans-serif;
+        }
+        .center {
+            text-align: center;
+        }
+
+        .tmid div {
+            margin: 0px auto;
+        }
+
+        .img-center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .atsPackage {
+            background-color: #ffffff;
+        }
+
+
+
+        .atsPackage .atsPackageCost {
+            color: #30c1f8;
+            display: inline-block;
+            width: auto ;
+            font-size:48px;
+            font-weight:300;
+
+         }
+
+        .atsPackage label.atsPackageCost::before{
+            content: "$";
+            vertical-align:text-top; 
+            font-size:14px
+        }
+
+        .atsPackage label.atsPackageCost::after{
+            content: "/MO";
+            vertical-align:text-bottom; 
+            font-size:16px
+        }
+        .choosenPackage {
+            background-color: #30c1f8;
+            opacity: 1.0;
+        }
+
+            .choosenPackage .atsPackageCost {
+                color: #ffffff;
+            }
+
+            .choosenPackage .atsPackageTitle {
+                color: #ffffff;
+            }
+
+            .choosenPackage .atsPackageShortDescription {
+                color: #f4f7f9;
+            }
+
+        .text-inactive {
+            color: #F3F3F3;
+        }
+
+
+
+        .atsPackage:hover {
+            border: #30c1f8;
+            border-style: solid;
+            border-width: 1px;
+        }
+            
+        .atsPackage * {
+            cursor: pointer;
+        }
+
+
+        .signupHeading {
+            font-weight: initial !important;
+            text-align: center;
+            <%= "padding-left: " + em1_0 + ";" %>
+            <%= "padding-right: " + em1_0 + ";" %>
+            <%= "font-size: " + em1_05 + ";" %>
+        }
+                        
+        .signupLabels label {
+            <%= "font-size: " + em0_65 + ";" %>
+        }
+
+        @media (min-width: 768px) {
+            .signupHeading {
+                <%= "font-size: " + em0_8 + ";" %>
+            }
+        }
+
+        .atsPackage {
+            border: #ffffff;
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 3px; 
+            <%= "min-width: " + em8_0 + ";" %>
+            <%= "min-height: " + em10_32 + ";" %>
+            <%= "padding: " + em0_75 + ";" %>
+        }
+        
+            .atsPackage .atsPackageTitle {
+                color: #000000;
+                display: block; 
+                letter-spacing:1px; 
+                font-size:12px;
+                <%= "margin-top: " + em0_9 + ";" %>
+            }
+
+            .atsPackage .atsPackageShortDescription {
+                display: block; 
+                font-weight: normal; 
+                color: #8a939a;
+                font-size:14px;
+                <%= "font-size: " + em0_6 + ";" %>
+                <%= "margin-top: " + em0_9 + ";" %>
+            }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptIncludePlaceHolder" runat="server">
+    <%: Scripts.Render("~/Content/Account_ChangePassword") %>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript">
+        var prevState = '';
+        $(function () {
+            $("#Phone").mask("(999) 999-9999?x9999");
+
+            $("#Zip").mask("9999?9-9999");
+
+            $("#Password").unbind().keyup(function () {
+                EvaluatePasswordField();
+            })
+
+            $("#Password").focus(function () {
+                prevState = $('#pwdLock').attr("class");
+                if ($("#Password").val().length > 0)
+                { EvaluatePasswordField(); }
+            })
+
+            $("#Password").blur(function () {
+                $('#pwdLock').removeClass('text-danger text-warning text-info text-success');
+                $("#alertPassword").html('');
+                $('#pwdLock').addClass(prevState);
+            })
+
+            $(".atsPackage").click(function () {
+                $('.choosenPackage').removeClass("choosenPackage");
+                $('.BlueGears').prop("src", "/Content/Images/BlueGears.png");
+                $('.BlueGears').prop("alt", "Blue Gears");
+                $(this).addClass("choosenPackage");
+                $(this).find(".BlueGears").prop("src", "/Content/Images/BlueGearsInverted.png");
+                $(this).find(".BlueGears").prop("alt", "Blue Gears Inverted");
+                switch (String($(this).prop("id"))) {
+                    case "divExpress":
+                        $('#ATSProductType').val("1");
+                        break;
+                    case "divEnterprise":
+                        $('#ATSProductType').val("2");
+                        break;
+                    case "divVideoInterview":
+                        $('#ATSProductType').val("3");
+                        break;
+                }
+            });
+
+            <% if (!System.Web.HttpContext.Current.Request.IsLocal) { %>
+            $('#frmClientSignUp').submit(function (event) {
+                event.preventDefault();
+                var Captcha = grecaptcha.getResponse($("#g-recaptcha")[0]);
+                if (String(Captcha) == "") {
+                    alert("Please check the I'm not a robot box to continue!");
+                    return false;
+                }
+                $("#Captcha").val(String(Captcha));
+                $(this).unbind().submit();
+            });
+            <% } else { %>
+            $('#frmClientSignUp').submit(function (event) {
+                event.preventDefault();
+                $("#Captcha").val("Good");
+                $(this).unbind().submit();
+            });
+            <% } %>
+        });
+        //alert alert-danger fix-alert-size --for outer div (pnl + propertyname) (alert + propertyname)
+        //$.fn.shortPass = 'Too short';
+        //$.fn.badPass = 'Weak';
+        //$.fn.goodPass = 'Good';
+        //$.fn.strongPass = 'Strong';
+        function EvaluatePasswordField() {
+            var passwordStrength = teststrength($("#Password").val(), "username", {
+                userid: "",
+                messageloc: 1
+            });
+
+            formatPasswordField(passwordStrength);
+        }
+
+        function formatPasswordField(passwordStrength) {
+            var formatClass;
+
+            $('#pwdLock').removeClass('text-danger text-warning text-info text-success');
+
+            if (passwordStrength == 'Too short') formatClass = 'text-danger';
+            if (passwordStrength == 'Weak') formatClass = 'text-warning';
+            if (passwordStrength == 'Good') formatClass = 'text-info';
+            if (passwordStrength == 'Strong') formatClass = 'text-success';
+
+            $('#pwdLock').addClass(formatClass);
+        }
+
+        function teststrength(password, username, option) {
+            var score = 0;
+
+            //password < 4
+            if (password.length < 4) { return $(this).shortPass; }
+
+            //password == user name
+            if (password.toLowerCase() == username.toLowerCase()) { this.resultStyle = option.badPass; return $(this).samePassword; }
+
+            //password length
+            score += password.length * 4;
+            score += ($.fn.checkRepetition(1, password).length - password.length) * 1;
+            score += ($.fn.checkRepetition(2, password).length - password.length) * 1;
+            score += ($.fn.checkRepetition(3, password).length - password.length) * 1;
+            score += ($.fn.checkRepetition(4, password).length - password.length) * 1;
+
+            //password has 3 numbers
+            if (password.match(/(.*[0-9].*[0-9].*[0-9])/)) { score += 5; }
+
+            //password has 2 symbols
+            if (password.match(/(.*[!,@,#,$,%,^,&,*,?,_,~].*[!,@,#,$,%,^,&,*,?,_,~])/)) { score += 5; }
+
+            //password has Upper and Lower chars
+            if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) { score += 10; }
+
+            //password has number and chars
+            if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) { score += 15; }
+            //
+            //password has number and symbol
+            if (password.match(/([!,@,#,$,%,^,&,*,?,_,~])/) && password.match(/([0-9])/)) { score += 15; }
+
+            //password has char and symbol
+            if (password.match(/([!,@,#,$,%,^,&,*,?,_,~])/) && password.match(/([a-zA-Z])/)) { score += 15; }
+
+            //password is just a numbers or chars
+            if (password.match(/^\w+$/) || password.match(/^\d+$/)) { score -= 10; }
+
+            //verifying 0 < score < 100
+            if (score < 0) { score = 0; }
+            if (score > 100) { score = 100; }
+
+            if (score < 34) { this.resultStyle = option.badPass; return $(this).badPass; }
+            if (score < 68) { this.resultStyle = option.goodPass; return $(this).goodPass; }
+
+            this.resultStyle = option.strongPass;
+            return $(this).strongPass;
+        };
+
+        if (typeof ATS_AddAlertToTop == 'undefined') {
+            function ATS_AddAlertToTop(alertText, alertLevel) {
+                ;
+            }
+        }
+    </script>
+</asp:Content>
